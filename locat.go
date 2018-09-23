@@ -17,19 +17,19 @@ type Sites struct {
 
 
 // Site struct which contains a name
-// a type and a list of social links
+// a type and a list of geometry links
 type Site struct {
 	Type   string `json:"type"`
-	Social Social `json:"social"`
+	Geometry Geometry `json:"geometry"`
 	Param Param `json:"properties"`
 }
 
 
-// Social struct which contains a
+// Geometry struct which contains a
 // list of links
-type Social struct {
+type Geometry struct {
+	Type string `json:"type"`
 	Facebook string `json:"facebook"`
-	Twitter string `json:"twitter"`
 }
 
 // Param struct which contains a
@@ -96,7 +96,7 @@ func main() {
 	// as just an example
 	for i := 0; i < len(features.Sites); i++ {
 		fmt.Println("Type: " + features.Sites[i].Type)
-		fmt.Println("Facebook Url: " + features.Sites[i].Social.Facebook)	
+		fmt.Println("Facebook Url: " + features.Sites[i].Geometry.Facebook)	
 		fmt.Println("City: " + features.Sites[i].Param.City)
 		fmt.Println("Zipcode: " + features.Sites[i].Param.Zipcode)
 		fmt.Println("Longitude: " + features.Sites[i].Param.Longitude)

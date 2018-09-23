@@ -3,9 +3,9 @@
   "features": [
     {
       "type" : "Feature",
-      "social" : {
-        "facebook" : "https://facebook.com",
-        "twitter" : "https://twitter.com"
+      "geometry" : {
+        "type" : "Point",	  
+        "facebook" : "https://facebook.com"
       },
         "properties": {
             "congressional_district": "7",
@@ -37,9 +37,9 @@
     },	  
     {
       "type" : "Feature",
-      "social" : {
-        "facebook" : "https://facebook.com",
-        "twitter" : "https://twitter.com"
+      "geometry" : {
+        "type" : "Point",	  
+        "facebook" : "https://facebook.com"
       },  	  
         "properties": {
             "congressional_district": "7",
