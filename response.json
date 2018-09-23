@@ -1,0 +1,33 @@
+{
+"type": "CupsitesCollection",
+  "cupsites": [
+    {
+      "name" : "Elliot",
+      "type" : "Reader",
+      "age" : 23,
+      "social" : {
+        "facebook" : "https://facebook.com",
+        "twitter" : "https://twitter.com"
+      },
+      "properties" : "Seattle",
+      "params" : {
+        "street" : "Olsen",
+        "color" : "Yellow"	  
+      }
+    },	  
+    {
+      "name" : "Fraser",
+      "type" : "Author",
+      "age" : 17,
+      "social" : {
+        "facebook" : "https://facebook.com",
+        "twitter" : "https://twitter.com"
+      },
+      "properties" : "Portland",	  	  
+      "params" : {
+        "street" : "Main",
+        "color" : "Blue"	  
+      }	  
+    }
+  ]
+}
