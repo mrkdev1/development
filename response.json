@@ -5,8 +5,12 @@
       "type" : "Feature",
       "geometry" : {
         "type" : "Point",	  
-        "facebook" : "https://facebook.com"
-      },
+        "facebook" : "https://facebook.com",
+        "coordinates": [
+                    -122.32926,
+                    47.59117
+            ]
+		},		
         "properties": {
             "congressional_district": "7",
             "location_state": null,
@@ -39,8 +43,12 @@
       "type" : "Feature",
       "geometry" : {
         "type" : "Point",	  
-        "facebook" : "https://facebook.com"
-      },  	  
+        "facebook" : "https://facebook.com",
+            "coordinates": [
+                -122.32926,
+                47.59117
+            ]
+		},  	  
         "properties": {
             "congressional_district": "7",
             "location_state": null,

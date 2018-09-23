@@ -30,7 +30,9 @@ type Site struct {
 type Geometry struct {
 	Type string `json:"type"`
 	Facebook string `json:"facebook"`
+	Coordinates []float32 
 }
+
 
 // Param struct which contains a
 // list of links
