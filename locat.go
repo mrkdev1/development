@@ -6,26 +6,22 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"strconv"
 )
 
 
 // Sites struct which contains
-// an array of cupsites
+// an array of features
 type Sites struct {
-	Sites []Site `json:"cupsites"`
+	Sites []Site `json:"features"`
 }
 
 
 // Site struct which contains a name
 // a type and a list of social links
 type Site struct {
-	Name   string `json:"name"`
 	Type   string `json:"type"`
-	Age    int    `json:"Age"`
 	Social Social `json:"social"`
-	Properties string `json:"properties"`
-	Param Param `json:"params"`
+	Param Param `json:"properties"`
 }
 
 
@@ -38,9 +34,32 @@ type Social struct {
 
 // Param struct which contains a
 // list of links
-type Param struct {
-	Street string `json:"street"`
-	Color string `json:"color"`
+type Param struct {	
+	Congd string `json:"congressional_district"`
+	Statel string `json:"location_state"`
+	Webs string `json:"website"`
+	City string `json:"city"`
+	Zipcode string `json:"zipcode"`
+	Loczip string `json:"location_zip"`
+	Cupsid string `json:"cleanup_site_id"`
+	Latitude string `json:"latitude"`
+	Hec string `json:"has_environmental_covenant"`
+	County string `json:"county_name"`
+	Rank string `json:"rank"`
+	Locadd string `json:"location_address"`
+	Ressec string `json:"responsible_section"`
+	Cupname string `json:"cleanup_site_name"`
+	Nfad string `json:"no_further_action_date"`
+	Loccity string `json:"location_city"`
+	Stat string `json:"statute"`
+	Longitude string `json:"longitude"`
+	Legd string `json:"legislative_district"`
+	Webdesc string `json:"website_description"`
+	Nfar string `json:"no_further_action_reason"`
+	Cupstatus string `json:"cleanup_status"`
+	Region string `json:"region"`
+	Address string `json:"address"`
+	Facid string `json:"facility_site_id"`	
 }
 
 func main() {
@@ -54,7 +73,7 @@ func main() {
 	}
 
 
-	fmt.Println("Successfully Opened cupsites.json")
+	fmt.Println("Successfully Opened response.json")
 	// defer the closing of our jsonFile so that we can parse it later on
 	defer jsonFile.Close()
 
@@ -64,24 +83,24 @@ func main() {
 
 
 	// we initialize our Sites array
-	var cupsites Sites
+	var features Sites
 
 
 	// we unmarshal our byteArray which contains our
-	// jsonFile's content into 'cupsites' which we defined above
-	json.Unmarshal(byteValue, &cupsites)
+	// jsonFile's content into 'features' which we defined above
+	json.Unmarshal(byteValue, &features)
 
 
-	// we iterate through every user within our cupsites array and
+	// we iterate through every user within our features array and
 	// print out the user Type, their name, and their facebook url
 	// as just an example
-	for i := 0; i < len(cupsites.Sites); i++ {
-		fmt.Println("Site Type: " + cupsites.Sites[i].Type)
-		fmt.Println("Site Age: " + strconv.Itoa(cupsites.Sites[i].Age))
-		fmt.Println("Site Name: " + cupsites.Sites[i].Name)
-		fmt.Println("Facebook Url: " + cupsites.Sites[i].Social.Facebook)
-		fmt.Println("City: " + cupsites.Sites[i].Properties)		
-		fmt.Println("Color: " + cupsites.Sites[i].Param.Color)
+	for i := 0; i < len(features.Sites); i++ {
+		fmt.Println("Type: " + features.Sites[i].Type)
+		fmt.Println("Facebook Url: " + features.Sites[i].Social.Facebook)	
+		fmt.Println("City: " + features.Sites[i].Param.City)
+		fmt.Println("Zipcode: " + features.Sites[i].Param.Zipcode)
+		fmt.Println("Longitude: " + features.Sites[i].Param.Longitude)
+		fmt.Println("Latitude: " + features.Sites[i].Param.Latitude)		
 	}
 
 

@@ -1,33 +1,74 @@
 {
-"type": "CupsitesCollection",
-  "cupsites": [
+"type": "FeatureCollection",
+  "features": [
     {
-      "name" : "Elliot",
-      "type" : "Reader",
-      "age" : 23,
+      "type" : "Feature",
       "social" : {
         "facebook" : "https://facebook.com",
         "twitter" : "https://twitter.com"
       },
-      "properties" : "Seattle",
-      "params" : {
-        "street" : "Olsen",
-        "color" : "Yellow"	  
-      }
+        "properties": {
+            "congressional_district": "7",
+            "location_state": null,
+            "website": "https://fortress.wa.gov/ecy/gsp/Sitepage.aspx?csid=7729",
+            "city": "SEATTLE                  ",
+            "zipcode": "98134     ",
+            "location_zip": null,
+            "cleanup_site_id": "7729",
+            "latitude": "47.59117",
+            "has_environmental_covenant": null,
+            "county_name": "King",
+            "rank": null,
+            "location_address": "\"\"",
+            "responsible_section": "Northwest",
+            "cleanup_site_name": "King County Metro Transit Ryerson Base",
+            "no_further_action_date": null,
+            "location_city": null,
+            "statute": "MTCA",
+            "longitude": "-122.32926",
+            "legislative_district": "37",
+            "website_description": null,
+            "no_further_action_reason": null,
+            "cleanup_status": "Cleanup Started",
+            "region": "Northwest",
+            "address": "1220 4TH AVE S",
+            "facility_site_id": "7217176"
+        }
     },	  
     {
-      "name" : "Fraser",
-      "type" : "Author",
-      "age" : 17,
+      "type" : "Feature",
       "social" : {
         "facebook" : "https://facebook.com",
         "twitter" : "https://twitter.com"
-      },
-      "properties" : "Portland",	  	  
-      "params" : {
-        "street" : "Main",
-        "color" : "Blue"	  
-      }	  
+      },  	  
+        "properties": {
+            "congressional_district": "7",
+            "location_state": null,
+            "website": "https://fortress.wa.gov/ecy/gsp/Sitepage.aspx?csid=7729",
+            "city": "SEATTLE                  ",
+            "zipcode": "98134     ",
+            "location_zip": null,
+            "cleanup_site_id": "7729",
+            "latitude": "47.59117",
+            "has_environmental_covenant": null,
+            "county_name": "King",
+            "rank": null,
+            "location_address": "\"\"",
+            "responsible_section": "Northwest",
+            "cleanup_site_name": "King County Metro Transit Ryerson Base",
+            "no_further_action_date": null,
+            "location_city": null,
+            "statute": "MTCA",
+            "longitude": "-122.32926",
+            "legislative_district": "37",
+            "website_description": null,
+            "no_further_action_reason": null,
+            "cleanup_status": "Cleanup Started",
+            "region": "Northwest",
+            "address": "1220 4TH AVE S",
+            "facility_site_id": "7217176"
+        }
+	  
     }
   ]
 }
