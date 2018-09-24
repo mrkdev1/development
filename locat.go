@@ -91,8 +91,7 @@ func main() {
 	// we unmarshal our byteArray which contains our
 	// jsonFile's content into 'features' which we defined above
 	json.Unmarshal(byteValue, &features)
-
-
+	
 	// we iterate through every user within our features array and
 	// print out the user Type, their name, and their facebook url
 	// as just an example
@@ -103,7 +102,9 @@ func main() {
 		fmt.Println("Longitude: " + features.Sites[i].Param.Longitude)
 		fmt.Println("Latitude: " + features.Sites[i].Param.Latitude)
 		fmt.Println(reflect.TypeOf(features.Sites[i].Geometry.Coordinates).String())		
-	  	fmt.Printf("%f",features.Sites[i].Geometry.Coordinates)		
+	  	fmt.Printf("lon: %f \n",features.Sites[i].Geometry.Coordinates[0])
+	  	fmt.Printf("lat: %f \n",features.Sites[i].Geometry.Coordinates[1])
+	  	fmt.Println("\n")		
 	}
 
 
