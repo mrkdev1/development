@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"reflect"
 )
 
 
@@ -29,8 +30,7 @@ type Site struct {
 // list of links
 type Geometry struct {
 	Type string `json:"type"`
-	Facebook string `json:"facebook"`
-	Coordinates []float32 
+	Coordinates []float32 `json:"coordinates"` 
 }
 
 
@@ -98,11 +98,12 @@ func main() {
 	// as just an example
 	for i := 0; i < len(features.Sites); i++ {
 		fmt.Println("Type: " + features.Sites[i].Type)
-		fmt.Println("Facebook Url: " + features.Sites[i].Geometry.Facebook)	
 		fmt.Println("City: " + features.Sites[i].Param.City)
 		fmt.Println("Zipcode: " + features.Sites[i].Param.Zipcode)
 		fmt.Println("Longitude: " + features.Sites[i].Param.Longitude)
-		fmt.Println("Latitude: " + features.Sites[i].Param.Latitude)		
+		fmt.Println("Latitude: " + features.Sites[i].Param.Latitude)
+		fmt.Println(reflect.TypeOf(features.Sites[i].Geometry.Coordinates).String())		
+	  	fmt.Printf("%f",features.Sites[i].Geometry.Coordinates)		
 	}
 
 
