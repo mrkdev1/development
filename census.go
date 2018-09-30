@@ -3,8 +3,11 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"io/ioutil"
 	"os"
+    "net/http"
+    "log"	
 )
 
 // Sites struct which contains
@@ -49,6 +52,30 @@ type Param struct {
 }
 
 func main() {
+
+     // Create output file
+     newFile, err := os.Create("response.json")
+     if err != nil {
+          log.Fatal(err)
+     }
+     defer newFile.Close()
+
+     // HTTP GET request devdungeon.com 
+     url := "https://data.wa.gov/resource/2tkm-ssw6.geojson?%24where=within_circle(location,%2047.59,%20-122.33,%20250)"
+     response, err := http.Get(url)
+     defer response.Body.Close()
+
+     // Write bytes from HTTP response to file.
+     // response.Body satisfies the reader interface.
+     // newFile satisfies the writer interface.
+     // That allows us to use io.Copy which accepts
+     // any type that implements reader and writer interface
+     numBytesWritten, err := io.Copy(newFile, response.Body)
+     if err != nil {
+          log.Fatal(err)
+     }
+     log.Printf("Downloaded %d byte file.\n", numBytesWritten)
+
 
 	// Open our jsonFile
 	jsonFile, err := os.Open("response.json")
