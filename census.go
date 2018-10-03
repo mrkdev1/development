@@ -61,7 +61,12 @@ func main() {
      defer newFile.Close()
 
      // HTTP GET request devdungeon.com 
-     url := "https://data.wa.gov/resource/2tkm-ssw6.geojson?%24where=within_circle(location,%2047.59,%20-122.33,%20250)"
+//     url := "https://data.wa.gov/resource/2tkm-ssw6.geojson?%24where=within_circle(location,%2047.59,%20-122.33,%20250)"
+
+     var lat string = "47.59"
+     var long string = "-122.33"	 
+     url := "https://data.wa.gov/resource/2tkm-ssw6.geojson?%24where=within_circle(location,%20" + lat + ",%20" + long + ",%20250)"
+
      response, err := http.Get(url)
      defer response.Body.Close()
 
